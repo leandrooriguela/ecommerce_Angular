@@ -10,6 +10,7 @@ export class NewsletterComponent implements OnInit {
   permiteNewsLatter = false;
   textNewsLatter = "Você pode receber os melhores descontos";
   email = "teste@teste.com.br";
+  emailEnviado = false;
 
   constructor() {}
 
@@ -21,6 +22,7 @@ export class NewsletterComponent implements OnInit {
 
   onSubmitNewsletter() {
     this.textNewsLatter = "E-mail enviado";
+    this.emailEnviado = true;
   }
 
   onEmailEnter(event: any) {

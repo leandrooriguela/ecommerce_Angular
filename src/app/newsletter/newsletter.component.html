@@ -8,8 +8,13 @@
 						<div class="newsletter_title_container">
 							<div class="newsletter_icon"><img src="images/send.png" alt=""></div>
 							<div class="newsletter_title">Sign up for Newsletter</div>
-              <div class="newsletter_text"><p>{{ textNewsLatter }}</p></div>
-              <div class="newsletter_text"><p>{{ email }}</p></div>
+              <!--<div class="newsletter_text"><p>{{ textNewsLatter }}</p></div>-->
+              <!--<div class="newsletter_text"><p>{{ email }}</p></div>-->
+              <div class="newsletter_text">
+                <p *ngIf="emailEnviado; else naoEnviado"> E-mail enviado com sucesso: {{ email }}</p></div>
+                <ng-template #naoEnviado>
+                  <p>E-mail não foi enviado ainda</p>
+                </ng-template>
 						</div>
 						<div class="newsletter_content clearfix">
 							<!--<form action="#" class="newsletter_form">-->
