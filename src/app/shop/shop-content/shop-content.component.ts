@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-shop-content',
@@ -11,9 +12,19 @@ export class ShopContentComponent implements OnInit {
 
   produtos: {nome, preco}[];
 
-  constructor() { }
+  constructor(
+    private productService: ProductService
+  ) { }
 
   ngOnInit(): void {
+    this.productService.getProducts().subscribe(
+      (data) => {
+        console.log(data);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
     this.produtos = new Array<{ nome, preco }>();
     this.produtos.push({ nome: 'Bateria', preco: 100.70});
     this.produtos.push({ nome: 'Rádio', preco: 99.70});
