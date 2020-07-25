@@ -8,8 +8,6 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ShopContentComponent implements OnInit {
 
-  qtdeProdutos: number = 200;
-
   produtos: {nome, preco}[];
 
   constructor(
@@ -32,6 +30,6 @@ export class ShopContentComponent implements OnInit {
   }
 
   getQtdeProdutos(): number {
-    return this.qtdeProdutos;
+    return this.produtos.length;
   }
 }
