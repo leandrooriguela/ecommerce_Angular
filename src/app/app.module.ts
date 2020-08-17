@@ -19,6 +19,8 @@ import { CopyrightComponent } from './copyright/copyright.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductItemComponent } from './product/product-item/product-item.component';
 import { ProductComponent } from './product/product.component';
+import { LayoutComponent } from './layout/layout.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -37,12 +39,14 @@ import { ProductComponent } from './product/product.component';
     FooterComponent,
     CopyrightComponent,
     ProductItemComponent,
-    ProductComponent
+    ProductComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
